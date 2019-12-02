@@ -17,12 +17,7 @@ solution1("inputs/input1.1")
 
 function recursivecost(mass)
     cost = fuelcost(mass)
-    fcost = fuelcost(cost)
-    while fcost > 0
-        cost += fcost
-        fcost = fuelcost(fcost)
-    end
-    return cost
+    cost <= 0 ? 0. : cost + recursivecost(cost)
 end
 
 recursivecost(100756)
@@ -36,5 +31,6 @@ function solution2(infile)
 
     return Int(cost)
 end
+
 
 solution2("inputs/input1.1")
